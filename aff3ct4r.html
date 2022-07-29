@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aff3ct4r</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width-device-width", initial-scale = 1>
+		<link rel="stylesheet" href="Style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+			
+		</script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+
+	<style>
+		#slide1{
+			border: 1px solid black;
+			height: 30px;
+			width: 100px;
+			background: orange;
+			transform: rotate(45deg);
+			margin-top: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		
+		<p class="bg-success btn-lg col-md-3 col-sm-6 col-xs-12" id="p1">Mon paragraphe 1</p>
+		<p class="bg-info btn-lg col-md-3 col-sm-6 col-xs-12" id="p2">Mon paragraphe 2</p>
+		<p class="bg-warning btn-lg col-md-3 col-sm-6 col-xs-12" id="p3">Mon paragraphe 3</p>
+		<p class="bg-default btn-lg col-md-3 col-sm-6 col-xs-12" id="p4">Mon paragraphe 4</p>
+		<p class="bg-danger btn-lg" id="p5">Mon paragraphe 5</p>
+
+		<div>
+			<button id="launch" class="btn btn-success">Launch Animation</button>
+			<p id="slide1"></p>
+			<p id="slide2"></p>
+			<p id="slide3"></p>
+			<p id="slide4"></p>
+		</div>
+
+		<script>
+			$(document).ready(function(){
+			
+				$("#p1").click(function(){
+					$("#p2").hide(100)
+					$("#p3").hide(100)
+					$("#p4").hide(100);
+					$("#p5").hide(100);
+				});
+
+				$("#p1").click(function(){
+					
+					$("#p1").animate({
+						position: "relative",
+						left: "400px",
+						top: "300px",
+						height: '50px'
+						
+					}, 10000);
+
+					$("#p1").animate({
+						width: "100px",
+						borderRadius: "50%"
+					}, 1000);
+
+					$("#p1").text("");
+
+					
+				});
+
+				$("#launch").click(function(){
+					$("#slide1").slideUp(1000);
+					$("#launch").addClass("btn-danger");
+				})
+			
+				
+			});
+		</script>
+
+		<iframe width="300" height="315" src="https://www.youtube.com/embed/77yjGguVM0U" title="Trailer - HackerLab édition CEDEAO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+</body>
+</html>
